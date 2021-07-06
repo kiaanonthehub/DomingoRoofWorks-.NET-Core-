@@ -1,0 +1,55 @@
+﻿@model IEnumerable<DomingoRoofWorks.Models.Job>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Job Card No.
+            </th>
+            <th>
+                Customer Name
+            </th>
+            <th>
+                Customer Address
+            </th>
+            <th>
+                JobType
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobCardId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.Name) @Html.DisplayFor(modelItem => item.Customer.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.Address), 
+                @Html.DisplayFor(modelItem => item.Customer.City), 
+                @Html.DisplayFor(modelItem => item.Customer.PostalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobType.JobType1)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.JobCardId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.JobCardId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.JobCardId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
