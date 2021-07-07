@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/20103016/databases/Domingo_Roof_Works",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:cnn",
+      "secretStore": null
+    }
+  }
+}

@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using DomingoRoofWorks.Models;
 
 #nullable disable
 
@@ -200,5 +201,7 @@ namespace DomingoRoofWorks.Models
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        public DbSet<DomingoRoofWorks.Models.Login> Login { get; set; }
     }
 }
