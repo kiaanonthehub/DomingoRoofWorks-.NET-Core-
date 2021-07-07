@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DomingoRoofWorks.Models;
+using System.Dynamic;
+using DomingoRoofWorks;
 
 namespace DomingoRoofWorks.Controllers
 {
@@ -21,8 +23,33 @@ namespace DomingoRoofWorks.Controllers
         // GET: Jobs
         public async Task<IActionResult> Index()
         {
+            dynamic dy = new ExpandoObject();
+            dy.jobEmpList = GetJobEmployees();
+            dy.jobMatList = GetJobMaterials();
+            dy.jobList = GetJobs();
+
             var domingo_Roof_WorksContext = _context.Jobs.Include(j => j.Customer).Include(j => j.JobType);
             return View(await domingo_Roof_WorksContext.ToListAsync());
+        }
+
+        public List<JobEmployee> GetJobEmployees()
+        {
+            Domingo_Roof_WorksContext db = new Domingo_Roof_WorksContext();
+            List<JobEmployee> je = db.JobEmployees.ToList();
+            return je;
+        }
+        public List<JobMaterial> GetJobMaterials() 
+        {
+            Domingo_Roof_WorksContext db = new Domingo_Roof_WorksContext();
+            List<JobMaterial> jm = db.JobMaterials.ToList();
+            return jm;
+        }
+
+        public List<Job> GetJobs()
+        {
+            Domingo_Roof_WorksContext db = new Domingo_Roof_WorksContext();
+            List<Job> j = db.Jobs.ToList();
+            return j;
         }
 
         // GET: Jobs/Details/5
@@ -84,7 +111,7 @@ namespace DomingoRoofWorks.Controllers
             {
                 return NotFound();
             }
-            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "Address", job.CustomerId);
+            ViewData["CustomerId"] = new SelectList(_context.Customers, "CustomerId", "Name", job.CustomerId);
             ViewData["JobTypeId"] = new SelectList(_context.JobTypes, "JobTypeId", "JobType1", job.JobTypeId);
             return View(job);
         }

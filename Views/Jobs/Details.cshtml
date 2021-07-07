@@ -10,24 +10,44 @@
     <h4>Job</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Days)
+
+        <dt class="col-sm-5">
+            Job Card No.
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Days)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JobCardId)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Customer)
+
+        <dt class="col-sm-5">
+            Customer Name
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Customer.Address)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customer.Name) @Html.DisplayFor(model => model.Customer.Surname)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.JobType)
+
+        <dt class="col-sm-10">
+            Customer Address
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customer.Address),
+            @Html.DisplayFor(model => model.Customer.City),
+            @Html.DisplayFor(model => model.Customer.PostalCode)
+        </dd>
+
+        <dt class="col-sm-5">
+            Job Type
+        </dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.JobType.JobType1)
         </dd>
+
+        <dt class="col-sm-5">
+            No. of days
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Days)
+        </dd>
+
     </dl>
 </div>
 <div>
