@@ -12,7 +12,7 @@ namespace DomingoRoofWorks.Models
             JobEmployees = new HashSet<JobEmployee>();
             JobMaterials = new HashSet<JobMaterial>();
         }
-
+        // Model properties 
         public int JobCardId { get; set; }
         public int CustomerId { get; set; }
         public int JobTypeId { get; set; }

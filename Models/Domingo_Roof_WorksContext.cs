@@ -202,6 +202,5 @@ namespace DomingoRoofWorks.Models
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
-        public DbSet<DomingoRoofWorks.Models.Login> Login { get; set; }
     }
 }

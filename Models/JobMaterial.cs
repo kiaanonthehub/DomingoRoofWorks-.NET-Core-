@@ -7,6 +7,8 @@ namespace DomingoRoofWorks.Models
 {
     public partial class JobMaterial
     {
+
+        // Model properties 
         public int JobMaterialId { get; set; }
         public int JobCardId { get; set; }
         public int MaterialId { get; set; }

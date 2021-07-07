@@ -10,12 +10,11 @@
     <hr />
     <dl class="dl-horizontal">
 
-
         <dt>
             Job Card No. : @ViewBag.JobCardID
             <br />
         </dt>
-        
+
         <dt>
             <br />
             Customer Details :
@@ -26,7 +25,6 @@
 
         <dt>
             Job Type : @ViewBag.JobType<br />
-            
         </dt>
         <dt>
             <br />
@@ -43,7 +41,7 @@
             Equiptment/Materials :
         </dt>
         <dd>
-             @foreach (var item in @ViewBag.Materials)
+            @foreach (var item in @ViewBag.Materials)
             {
                 @item
                 <br />
@@ -82,8 +80,6 @@
                 </TR>
             </TABLE>
         </dd>
-
-
     </dl>
 </div>
 <p>

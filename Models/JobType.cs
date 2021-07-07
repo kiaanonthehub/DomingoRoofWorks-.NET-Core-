@@ -12,6 +12,7 @@ namespace DomingoRoofWorks.Models
             Jobs = new HashSet<Job>();
         }
 
+        // Model properties 
         public int JobTypeId { get; set; }
         public string JobType1 { get; set; }
         public decimal Rate { get; set; }

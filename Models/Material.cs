@@ -12,6 +12,7 @@ namespace DomingoRoofWorks.Models
             JobMaterials = new HashSet<JobMaterial>();
         }
 
+        // Model properties 
         public int MaterialId { get; set; }
         public string Description { get; set; }
 

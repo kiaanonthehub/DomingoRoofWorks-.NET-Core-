@@ -7,6 +7,7 @@ namespace DomingoRoofWorks.Models
 {
     public class Invoice
     {
+        // Model properties 
         public virtual Job Jobs { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual Employee Employee { get; set; }
